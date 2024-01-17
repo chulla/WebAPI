@@ -1,0 +1,6 @@
+@WebAPINET8_HostAddress = https://localhost:7268/api
+
+GET {{WebAPINET8_HostAddress}}/Usuarios/
+Accept: application/json
+
+###
