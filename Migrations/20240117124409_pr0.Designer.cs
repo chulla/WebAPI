@@ -12,7 +12,7 @@ using WebAPINET8.Database;
 namespace WebAPINET8.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117121028_pr0")]
+    [Migration("20240117124409_pr0")]
     partial class pr0
     {
         /// <inheritdoc />
@@ -25,6 +25,39 @@ namespace WebAPINET8.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("WebAPINET8.Models.Empresa", b =>
+                {
+                    b.Property<int>("EmpresaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmpresaId"));
+
+                    b.Property<string>("Direccion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmpresaId");
+
+                    b.ToTable("Empresas");
+
+                    b.HasData(
+                        new
+                        {
+                            EmpresaId = 1,
+                            Direccion = "Dirección1",
+                            Nombre = "Empresa1"
+                        },
+                        new
+                        {
+                            EmpresaId = 2,
+                            Direccion = "Dirección2",
+                            Nombre = "Empresa2"
+                        });
+                });
+
             modelBuilder.Entity("WebAPINET8.Models.Usuario", b =>
                 {
                     b.Property<int>("UsuarioId")
@@ -34,10 +67,12 @@ namespace WebAPINET8.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
 
                     b.Property<string>("CorreoElectronico")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("FechaRegistro")
+                    b.Property<int?>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("FechaRegistro")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Nombre")
@@ -46,6 +81,8 @@ namespace WebAPINET8.Migrations
 
                     b.HasKey("UsuarioId");
 
+                    b.HasIndex("EmpresaId");
+
                     b.ToTable("Usuarios");
 
                     b.HasData(
@@ -53,72 +90,96 @@ namespace WebAPINET8.Migrations
                         {
                             UsuarioId = 1,
                             CorreoElectronico = "usuario1@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6174),
+                            EmpresaId = 1,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1000),
                             Nombre = "Usuario1"
                         },
                         new
                         {
                             UsuarioId = 2,
                             CorreoElectronico = "usuario2@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6235),
+                            EmpresaId = 1,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1060),
                             Nombre = "Usuario2"
                         },
                         new
                         {
                             UsuarioId = 3,
                             CorreoElectronico = "usuario3@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6237),
+                            EmpresaId = 1,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1062),
                             Nombre = "Usuario3"
                         },
                         new
                         {
                             UsuarioId = 4,
                             CorreoElectronico = "usuario4@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6239),
+                            EmpresaId = 1,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1064),
                             Nombre = "Usuario4"
                         },
                         new
                         {
                             UsuarioId = 5,
                             CorreoElectronico = "usuario5@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6240),
+                            EmpresaId = 1,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1066),
                             Nombre = "Usuario5"
                         },
                         new
                         {
                             UsuarioId = 6,
                             CorreoElectronico = "usuario6@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6242),
+                            EmpresaId = 2,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1068),
                             Nombre = "Usuario6"
                         },
                         new
                         {
                             UsuarioId = 7,
                             CorreoElectronico = "usuario7@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6243),
+                            EmpresaId = 2,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1070),
                             Nombre = "Usuario7"
                         },
                         new
                         {
                             UsuarioId = 8,
                             CorreoElectronico = "usuario8@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6245),
+                            EmpresaId = 2,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1071),
                             Nombre = "Usuario8"
                         },
                         new
                         {
                             UsuarioId = 9,
                             CorreoElectronico = "usuario9@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6247),
+                            EmpresaId = 2,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1073),
                             Nombre = "Usuario9"
                         },
                         new
                         {
                             UsuarioId = 10,
                             CorreoElectronico = "usuario10@example.com",
-                            FechaRegistro = new DateTime(2024, 1, 17, 13, 10, 26, 586, DateTimeKind.Local).AddTicks(6248),
+                            EmpresaId = 2,
+                            FechaRegistro = new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1075),
                             Nombre = "Usuario10"
                         });
+                });
+
+            modelBuilder.Entity("WebAPINET8.Models.Usuario", b =>
+                {
+                    b.HasOne("WebAPINET8.Models.Empresa", "Empresa")
+                        .WithMany("Usuarios")
+                        .HasForeignKey("EmpresaId");
+
+                    b.Navigation("Empresa");
+                });
+
+            modelBuilder.Entity("WebAPINET8.Models.Empresa", b =>
+                {
+                    b.Navigation("Usuarios");
                 });
 #pragma warning restore 612, 618
         }
