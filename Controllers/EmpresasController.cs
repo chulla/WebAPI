@@ -27,21 +27,9 @@ namespace WebAPINET8.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Empresa>>> GetEmpresas()
         {
-            var empresas = await _context.Empresas
-                .Include(e => e.Usuarios)
+            
+            return await _context.Empresas
                 .ToListAsync();
-
-            var jsonSettings = new JsonSerializerOptions
-            {
-                ReferenceHandler = ReferenceHandler.Preserve,
-                MaxDepth = 6
-            };
-
-            // Serializa las empresas con las opciones configuradas
-            var serializedEmpresas = JsonSerializer.Serialize(empresas, jsonSettings);
-
-            // Deserializa las empresas para devolverlas como resultado
-            return Ok(JsonSerializer.Deserialize<List<Empresa>>(serializedEmpresas, jsonSettings));
         }
 
         // GET: api/Empresas/5

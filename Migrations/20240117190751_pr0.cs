@@ -62,16 +62,16 @@ namespace WebAPINET8.Migrations
                 columns: new[] { "UsuarioId", "CorreoElectronico", "EmpresaId", "FechaRegistro", "Nombre" },
                 values: new object[,]
                 {
-                    { 1, "usuario1@example.com", 1, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1000), "Usuario1" },
-                    { 2, "usuario2@example.com", 1, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1060), "Usuario2" },
-                    { 3, "usuario3@example.com", 1, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1062), "Usuario3" },
-                    { 4, "usuario4@example.com", 1, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1064), "Usuario4" },
-                    { 5, "usuario5@example.com", 1, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1066), "Usuario5" },
-                    { 6, "usuario6@example.com", 2, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1068), "Usuario6" },
-                    { 7, "usuario7@example.com", 2, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1070), "Usuario7" },
-                    { 8, "usuario8@example.com", 2, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1071), "Usuario8" },
-                    { 9, "usuario9@example.com", 2, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1073), "Usuario9" },
-                    { 10, "usuario10@example.com", 2, new DateTime(2024, 1, 17, 13, 44, 7, 603, DateTimeKind.Local).AddTicks(1075), "Usuario10" }
+                    { 1, "usuario1@example.com", 1, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7922), "Usuario1" },
+                    { 2, "usuario2@example.com", 1, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7969), "Usuario2" },
+                    { 3, "usuario3@example.com", 1, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7971), "Usuario3" },
+                    { 4, "usuario4@example.com", 1, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7973), "Usuario4" },
+                    { 5, "usuario5@example.com", 1, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7975), "Usuario5" },
+                    { 6, "usuario6@example.com", 2, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7977), "Usuario6" },
+                    { 7, "usuario7@example.com", 2, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7979), "Usuario7" },
+                    { 8, "usuario8@example.com", 2, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7981), "Usuario8" },
+                    { 9, "usuario9@example.com", 2, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7982), "Usuario9" },
+                    { 10, "usuario10@example.com", 2, new DateTime(2024, 1, 17, 20, 7, 50, 374, DateTimeKind.Local).AddTicks(7984), "Usuario10" }
                 });
 
             migrationBuilder.CreateIndex(
